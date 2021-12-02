@@ -18,11 +18,56 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
+            CarLot lot = new CarLot();
+            
+            
+            //Standard Initialization
+            var isuzu = new Car();
+            lot.CarList.Add(isuzu);
+            isuzu.Year = 1999;
+            isuzu.Model = "Rodeo";
+            isuzu.Make = "Isuzu";
+            isuzu.EngineNoise = "Wonkk Wonkk";
+            isuzu.HonkNoise = "kibbles n bits, kibbles n bits";
+            isuzu.IsDriveable = true;
+            isuzu.MakeEngineNoise();
+            isuzu.MakeHonkNoise();
+
+            //Object Initializer Syntax
+            var toyota = new Car() { Year = 2022, Model = "Corola", Make = "Toyota", EngineNoise = "Wommm Wommm", HonkNoise = "Riiiiipit, Riiiiipit", IsDriveable = true };
+            lot.CarList.Add(toyota);
+            //toyota.Year = 2022;
+            //toyota.Model = "Corola";
+            //toyota.Make = "Toyota";
+            //toyota.EngineNoise = "Wommmm Wommmm";
+            //toyota.HonkNoise = "Riiiiipit, Riiiiipit";
+            //toyota.IsDriveable = true;
+            toyota.MakeEngineNoise();
+            toyota.MakeHonkNoise();
+
+            //Constructor Initialization
+            var cadillac = new Car(2022, "Escalade", "Cadillac", "neroom neroom", "WACHI WACHI", true);
+            lot.CarList.Add(cadillac);
+            //cadillac.Year = 2022;
+            //cadillac.Model = "Escalade";
+            //cadillac.Make = "Cadillac";
+            //cadillac.EngineNoise = "neroom, neroom";
+            //cadillac.HonkNoise = "WACHI WACHI";
+            //cadillac.IsDriveable = true;
+            cadillac.MakeEngineNoise();
+            cadillac.MakeHonkNoise();
+
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
 
             //*************BONUS X 2*************//
+
+            foreach (var car in lot.CarList)
+            {
+                Console.WriteLine($"Year: {car.Year} Make: {car.Make} Model: {car.Model}");
+            }
+            
 
             //Create a CarLot class
             //It should have at least one property: a List of cars
